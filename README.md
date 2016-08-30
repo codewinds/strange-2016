@@ -43,6 +43,17 @@ If git isn't installed then visit https://git-scm.com/ to download and install.
 npm install
 ```
 
+The install can take several minutes dependin on your machine.
+
+Note on some platforms like windows you might get some errors when it tries to install optional packages like fsevents. Normally these are ok and the build should continue. If the build ends up failing you might try
+
+```bash
+npm cache clean
+```
+
+Delete your node_modules directory and try the `npm install` again.
+
+
 
 ## Run the auto-build dev environment
 
