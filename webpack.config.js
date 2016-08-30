@@ -1,5 +1,7 @@
 'use strict';
 
+/* eslint-disable */
+
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var autoprefixer = require('autoprefixer');
@@ -8,6 +10,8 @@ var WebpackShellPlugin = require('webpack-shell-plugin');
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 var browserSyncConfig = require('./bs-config');
 var CleanCSSLoader = require('clean-css-loader');
+
+var subjects = require('./util/get-subjects')();
 
 var env = process.env.NODE_ENV || 'development';
 var isProd = (env === 'production');
@@ -20,10 +24,19 @@ var config = {
       chunks: false
     }
   },
-  entry: {
+  // setup entries for subjects
+  entry: subjects.reduce(function (accum, subject) {
+    // 'example1/foo': ['./subjects/example1/src/foo.js'],
+    // 'example1/style': ['./subjects/example1/style/site.less']
+    accum[subject + '/lecture'] = ['./subjects/' + subject + '/src/lecture.js'];
+    accum[subject + '/exercise'] = ['./subjects/' + subject + '/src/exercise.js'];
+    accum[subject + '/solution'] = ['./subjects/' + subject + '/src/solution.js'];
+    accum[subject + '/style'] = ['./subjects/' + subject + '/style/site.less'];
+    return accum;
+  }, { // root entries
     main: ['./src/browser.jsx'],
     style: ['./style/site.less']
-  },
+  }),
   output: {
     path: __dirname + '/dist',
     libary: '[name]',
@@ -45,8 +58,7 @@ var config = {
         loader: ExtractTextPlugin.extract('style',
                                           (isProd) ?
                                           'css!clean-css!postcss!less' :
-                                          'css!postcss!less'
-                                         )
+                                          'css!postcss!less')
       }
       // can uncomment this if need to compile joi, isemail, hoek, topo
       // {
@@ -74,6 +86,11 @@ var config = {
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common',
+      filename: 'common.js',
+      minChunks: 2
+    }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(env)
     }),

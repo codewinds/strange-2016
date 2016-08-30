@@ -1,7 +1,10 @@
+/* eslint-disable */
+
+var subjects = require('./util/get-subjects')();
 
 // http://www.browsersync.io/docs/options/
 
-module.exports = {
+var config = {
   // uses default browser or you can specify your own choice
   // browser: ['google chrome'],
   // browser: ['google chrome canary'],
@@ -22,8 +25,18 @@ module.exports = {
   ],
   server: {
     baseDir: './public',
-    routes: {
-      '/dist': './dist'
-    }
+    // setup routes for all subjects
+    routes: subjects.reduce(function (accum, subject) {
+      // /example1 -> ./subjects/example1/public
+      // /example1 -> ./dist/example1
+      accum['/' + subject] = './subjects/' + subject + '/public';
+      accum['/' + subject + '/dist'] = './dist/' + subject;
+      return accum;
+    }, { // root routes
+      '/dist': './dist',
+      '/shared': './dist'
+    })
   }
 };
+
+module.exports = config;
