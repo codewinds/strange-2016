@@ -57,9 +57,10 @@ npm install
 
 The install can take several minutes depending on your machine.
 
-Note on some platforms like windows you might get some errors when it tries to install optional packages like fsevents. Normally these are ok and the build should continue. If the build ends up failing you might try
+Note on some platforms like windows you might get some errors when it tries to install optional packages like `fsevents`. Normally these are ok and the build should continue. If the build ends up failing you might try
 
 ```bash
+# if your install is failing hard try cleaning cache
 npm cache clean
 ```
 
