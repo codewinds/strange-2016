@@ -9,9 +9,9 @@ The workshop uses an auto-build development environment to transpile ES6/7 code 
 ## Install
 
  1. Install Node.js (with npm)
- 2. Install or confirm git is installed
+ 2. Install/confirm git is installed and clone this repo
  3. Install dependencies using npm
-
+ 4. Run the environment to verify
 
 ### 1. Install Node.js (with npm)
 
@@ -30,7 +30,7 @@ npm -v
 Node.js: 4.x.x (LTS) or 6.x.x (Current)
 NPM: 2.x.x, 3.0.0-3.8.7, or 3.10.4+
 
-### 2. Confirming git is installed
+### 2. Confirming git is installed and cloning repo
 
 Git is used to make it easy to pull down the latest changes to the repo for the workshop.
 
@@ -42,9 +42,16 @@ git --version
 
 If git isn't installed then visit https://git-scm.com/ to download and install.
 
+To clone this repo to your workstation (pulling down the files you will need)
+
+```bash
+git clone https://github.com/codewinds/strange-2016
+```
+
 ### 3. Installing the dependencies using npm
 
 ```bash
+cd strange-2016
 npm install
 ```
 
@@ -62,7 +69,7 @@ Also double check your version of Node and NPM which I mentioned in step 1.
 
 If you still have problems, please see the section below about contacting me for help.
 
-## Run the auto-build dev environment
+## 4. Run the auto-build dev environment
 
 To start the auto-build dev enviornment and display the index page in your browser.
 
@@ -94,3 +101,8 @@ Click the link below to send me an email with the subject "Strange Loop 2016 ins
  1. output from running: node -v
  2. output from running: npm -v
  3. attach any errors or anything you think may be relevant
+
+
+## Thanks
+
+Thanks for preinstalling the workshop dependencies and verifying operation. By having this repo preinstalled it won't take much to update with my source for the workshop. You never know how conference wifi will hold up so better to have preinstalled. I look forward to working with you at the workshop.
