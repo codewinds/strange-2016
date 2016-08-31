@@ -45,7 +45,7 @@ If git isn't installed then visit https://git-scm.com/ to download and install.
 To clone this repo to your workstation (pulling down the files you will need)
 
 ```bash
-git clone https://github.com/codewinds/strange-2016
+git clone https://github.com/codewinds/strange-2016.git
 ```
 
 ### 3. Installing the dependencies using npm
