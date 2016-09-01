@@ -6,6 +6,8 @@ The workshop uses an auto-build development environment to transpile ES6/7 code 
 
 **Note: Please install this repo prior to the workshop** so we can ensure that things install and build properly. As we approach the workshop, you'll be able to do a `git pull origin` to efficiently get the updated workshop code wihout having to redownload these dependencies. If you have any problems, see the end of this readme for contacting me.
 
+[Follow me on twitter: @jeffbski](https://twitter.com/jeffbski) to get notified about updates for the workshop
+
 ## Install
 
  1. Install Node.js (with npm)
@@ -107,3 +109,5 @@ Click the link below to send me an email with the subject "Strange Loop 2016 ins
 ## Thanks
 
 Thanks for preinstalling the workshop dependencies and verifying operation. By having this repo preinstalled it won't take much to update with my source for the workshop. You never know how conference wifi will hold up so better to have preinstalled. I look forward to working with you at the workshop.
+
+[Follow me on twitter: @jeffbski](https://twitter.com/jeffbski) to get notified about updates for the workshop
