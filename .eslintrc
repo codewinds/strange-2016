@@ -26,6 +26,7 @@
     "react/jsx-wrap-multilines": 2,
     "react/no-find-dom-node": 0,
     "react/prop-types": 0,
+    "space-in-parens": 0,
     "valid-jsdoc": 2
   },
   "parser": "babel-eslint",

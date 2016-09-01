@@ -28,6 +28,13 @@ const appContainerDiv = document.querySelector('#appContainer');
 //   }
 // }
 
+/* old createClass way */
+// const App = React.createClass({
+//   render() {
+//     return <div>Old way</div>;
+//   }
+// });
+
 /* without JSX */
 // function App({ prefix }) {
 //   return React.createElement('div', {},
@@ -43,6 +50,13 @@ const appContainerDiv = document.querySelector('#appContainer');
 // render();
 
 
+/* example with id and className */
+// function App({ prefix }) {
+//   return (
+//       <div id="app" className="message">{ prefix } Strange Loop</div>
+//   );
+// }
+
 /* re-rendering */
 
 // function render() {
@@ -52,3 +66,115 @@ const appContainerDiv = document.querySelector('#appContainer');
 // }
 
 // setInterval(render, 1000);
+
+
+/* composition */
+
+// ReactDOM.render(<App />, appContainerDiv);
+
+// function App() {
+//   return (
+//     <div>
+//       <Heading />
+//       <Foo />
+//     </div>
+//   );
+// }
+
+// function Heading() {
+//   return (
+//     <h1>My heading</h1>
+//   );
+// }
+
+// function Foo() {
+//   return (
+//     <div>Foo</div>
+//   );
+// }
+
+
+/* fetching data with Axios, iterating with map */
+// import axios from 'axios';
+
+// axios.get('/fake-api.json')
+//   .then(resp => resp.data.items)
+//   .then(items => render(items));
+
+// function render(items) {
+//   ReactDOM.render(<App widgets={items} />, appContainerDiv);
+// }
+
+// function App({ widgets }) {
+//   return (
+//     <div>
+//       <h1>Widgets</h1>
+//       <ul>
+//       { widgets.map(w => (
+//           <li key={w.id}>{w.name}</li> )) }
+//       </ul>
+//     </div>
+//   );
+// }
+
+
+/* conditional logic using && */
+
+// ReactDOM.render(<App navShown={true} />, appContainerDiv);
+
+// function App({ navShown }) {
+//   return (
+//     <div>
+//       { navShown && <Nav /> }
+//       <div>main content</div>
+//     </div>
+//   );
+// }
+
+// function Nav() {
+//   return (
+//     <section>Nav here</section>
+//   );
+// }
+
+
+/* conditional logic using functions */
+
+// ReactDOM.render(<App navShown={true} />, appContainerDiv);
+
+// function App({ navShown }) {
+//   return (
+//     <div>
+//       { navDisplay() }
+//       <div>main content</div>
+//     </div>
+//   );
+
+//   function navDisplay() {
+//     if (!navShown) { return null; }
+//     return <Nav />;
+//   }
+// }
+
+// function Nav() {
+//   return (
+//     <section>Nav here</section>
+//   );
+// }
+
+
+/* prop types
+   https://facebook.github.io/react/docs/reusable-components.html#prop-validation */
+// function App({ greeting }) {
+//   return (
+//       <div>{ greeting } Strange Loop</div>
+//   );
+// }
+// App.propTypes = {
+//   greeting: React.PropTypes.string.isRequired
+// };
+
+// ReactDOM.render(<App />, appContainerDiv);
+
+// const greeting = 'Hello';
+// ReactDOM.render(<App greeting={greeting} />, appContainerDiv);
