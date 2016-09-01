@@ -6,14 +6,14 @@ import ReactDOM from 'react-dom';
 const appContainerDiv = document.querySelector('#appContainer');
 
 /* stateless function component */
-// function App({ prefix }) {
-//   return (
-//       <div>
-//         <h1>{ prefix } Strange Loop!!!</h1>
-//         <div>using stateless function component</div>
-//       </div>
-//   );
-// }
+function App({ prefix }) {
+  return (
+      <div>
+        <h1>{ prefix } Strange Loop!!!</h1>
+        <div>using stateless function component</div>
+      </div>
+  );
+}
 
 /* ES6 class component */
 // class App extends React.Component {
@@ -42,12 +42,11 @@ const appContainerDiv = document.querySelector('#appContainer');
 //       `${prefix} Strange Loop!`));
 // }
 
-// function render() {
-//   const greeting = 'Hello';
-//   ReactDOM.render(<App prefix={greeting} />, appContainerDiv);
-// }
-
-// render();
+function render() {
+  const greeting = 'Hello';
+  ReactDOM.render(<App prefix={greeting} />, appContainerDiv);
+}
+render();
 
 
 /* example with id and className */
@@ -161,6 +160,51 @@ const appContainerDiv = document.querySelector('#appContainer');
 //     <section>Nav here</section>
 //   );
 // }
+
+
+
+/* button onClick */
+
+// function buyClicked(ev) {
+//   console.log('buyClicked', ev.target);
+// }
+
+// ReactDOM.render(<App buyClicked={buyClicked} />, appContainerDiv);
+
+// function App({ buyClicked }) {
+//   return (
+//       <button onClick={buyClicked}>Buy</button>
+//   );
+// }
+
+
+
+/* forms */
+
+// ReactDOM.render(<App formChange={formChange}
+//                      formSubmit={formSubmit} />, appContainerDiv);
+
+// function App({ formChange, formSubmit }) {
+//   return (
+//       <form onSubmit={formSubmit} >
+//       <input name="first" placeholder="First Name"
+//              onChange={formChange} />
+//       <input name="last" placeholder="last Name"
+//              onChange={formChange} />
+//       <button>Submit</button>
+//       </form>
+//   );
+// }
+
+// function formChange(ev) {
+//   console.log('formChange', ev.target.name, ev.target.value);
+// }
+
+// function formSubmit(ev) {
+//   ev.preventDefault(); // prevent the normal form submit
+//   console.log('formSubmit');
+// }
+
 
 
 /* prop types
