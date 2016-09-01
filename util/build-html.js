@@ -10,7 +10,7 @@ const courseTitle = "Pragmatically Applying Functional React.js";
 const subjectsDir = Path.resolve(__dirname, '..', 'subjects');
 
 const subjects = {
-  example1: 'Example 1'
+  reactjs: 'React.js'
 };
 
 function createSubjectHtml(subject, item) {
@@ -43,7 +43,7 @@ function createMainIndexHtml() {
             DOM.tbody({},
               Object.keys(subjects).map((subject, idx) =>
                 DOM.tr({ className: (idx % 2) ? 'odd' : 'even', key: idx },
-                  DOM.td({ className: 'idx' }, idx + 1),
+                  DOM.td({ className: 'idx' }, `${idx + 1}.`),
                   DOM.td({ className: 'lecture' },
                     DOM.a({ href: `/${subject}/lecture.html` }, subjects[subject])),
                   DOM.td({ className: 'exercise' },
