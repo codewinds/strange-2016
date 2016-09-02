@@ -17,7 +17,7 @@ The workshop uses an auto-build development environment to transpile ES6/7 code 
 
 ### 1. Install Node.js (with npm)
 
-Install the latest LTS 4+ or Current 6+ version. Also check that your npm version is 2.x.x, 3.0.0-3.8.7, or 3.10.4+.
+Install the latest LTS 4+ or Current 6+ version (see note about updating npm version though). Also check that your npm version is 2.x.x, 3.0.0-3.8.7, or 3.10.4+.
 
  - https://nodejs.org/ - Node.js home page
  - https://nodejs.org/en/download/ - Other Node.js downloads
@@ -29,8 +29,20 @@ node -v
 npm -v
 ```
 
-Node.js: 4.x.x (LTS) or 6.x.x (Current)
-NPM: 2.x.x, 3.0.0-3.8.7, or 3.10.4+
+Node.js: 4.x.x (LTS) or 6.x.x (Current) (**if using v6.x.x**, check npm version, it might need updating, see below)
+NPM: 2.x.x, 3.0.0-3.8.7, or 3.10.4+ (are all acceptable)
+
+**If you want to use Node.js v6.5.0, then you need to update npm** since it has a buggy version of npm (v3.10.3). You can upgrade it using the following command.
+
+You don't need to update npm if you have npm version 2.x.x or 3.0.0-3.8.7, it's only necessary if you have one of the broken versions.
+
+```bash
+# updating buggy npm v3.10.3 to a higher version
+npm update -g npm
+```
+
+After doing this your npm version should be 3.10.7 or higher.
+
 
 ### 2. Confirming git is installed and cloning repo
 
@@ -96,6 +108,8 @@ npm install
 ## If you have problems getting things installed or running
 
 Please let me know if you have any problems getting things installed and running. I'd like to handle as many of these things in advance so we can focus our workshop time on the material and exercises.
+
+**One common install error is that you have a broken version of npm.** You can fix this by updating your npm as mentioned in install step 1 above.
 
 Click the link below to send me an email with the subject "Strange Loop 2016 installation issue" and include the following details:
 
