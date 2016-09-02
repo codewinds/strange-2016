@@ -10,7 +10,8 @@ const courseTitle = "Pragmatically Applying Functional React.js";
 const subjectsDir = Path.resolve(__dirname, '..', 'subjects');
 
 const subjects = {
-  reactjs: 'React.js'
+  reactjs: 'React.js',
+  redux: 'Redux'
 };
 
 function createSubjectHtml(subject, item) {
