@@ -66,8 +66,12 @@ git clone https://github.com/codewinds/strange-2016.git
 
 ```bash
 cd strange-2016
-npm install
+node verify.js && npm install
 ```
+
+Note that if `node` is not found on your machine, try `nodejs`. On some machines it is installed with that name due to a conflict.
+
+If the verify script finds that your npm version is outdated it may instruct you on how to update it before continuing with the install.
 
 The install can take several minutes depending on your machine.
 
