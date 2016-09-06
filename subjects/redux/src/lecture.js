@@ -142,57 +142,239 @@ const appContainerDiv = document.querySelector('#appContainer');
 
 
 /* react-redux */
-import { connect } from 'react-redux';
 
-const initialState = {
-  cartItems: []
-};
+// import { connect, Provider } from 'react-redux';
+//
+// const initialState = {
+//   cartItems: []
+// };
+//
+// function reducer(state = initialState,
+//                  action = {}) {
+//   switch (action.type) {
+//     case 'ADD_TO_CART':
+//       return {
+//         ...state,
+//         cartItems: state.cartItems.concat(
+//           action.payload)
+//       };
+//     case 'CLEAR_CART':
+//       return {
+//         ...state,
+//         cartItems: []
+//       };
+//     default:
+//       return state;
+//   }
+// }
+//
+// const enhancer = (window.devToolsExtension) ?
+//                  window.devToolsExtension() :
+//                  f => f;
+// const store = createStore(reducer, undefined, enhancer);
+//
+// const actions = {
+//   clearCart(ev) {
+//     return { type: 'CLEAR_CART' };
+//   }
+// };
+//
+// function Cart({ cartItems, clearCart }) {
+//   return (
+//     <div>
+//     <h1>Cart</h1>
+//     <ul>
+//     { cartItems.map(item => (
+//       <li key={item.id}>{ item.name }</li> )) }
+//     </ul>
+//     <button onClick={ clearCart }>Clear cart</button>
+//     </div>
+//   );
+// }
+//
+// const CCart = connect(
+//   state => ({ /* mapStateToProps */
+//     cartItems: state.cartItems
+//   }),
+//   {  /* mapDispatchToProps */
+//     clearCart: actions.clearCart
+//   }
+// )(Cart);
+//
+// function App() {
+//   return (
+//     <Provider store={store} >
+//     <CCart />
+//     </Provider>
+//   );
+// }
+//
+// ReactDOM.render(<App />,
+//                 appContainerDiv);
+//
+//
+// store.dispatch({ type: 'ADD_TO_CART',
+//                  payload: { id: 101, name: 'Foo' }
+// });
+//
+// setTimeout(() => {
+//   store.dispatch({ type: 'ADD_TO_CART',
+//                    payload: { id: 201, name: 'Bar' }
+//   });
+// }, 2000);
 
-function reducer(state = initialState,
-                 action = {}) {
-  switch (action.type) {
-    case 'ADD_TO_CART':
-      return {
-        ...state,
-        cartItems: state.cartItems.concat(
-          action.payload)
-      };
-    default:
-      return state;
-  }
-}
 
-const enhancer = (window.devToolsExtension) ?
-                 window.devToolsExtension() :
-                 f => f;
-const store = createStore(reducer, undefined, enhancer);
+/* combineReducers and selectors */
 
-store.subscribe(() => {
-  const state = store.getState();
-  console.log('state', state);
-  ReactDOM.render(<App cartItems={ state.cartItems} />,
-                  appContainerDiv);
-});
+// import { combineReducers } from 'redux';
+//
+// const cartKey = 'cart'; /* for selectors and combine */
+// const cartSel = {
+//   cartItems: state => state[cartKey].cartItems
+// };
+// const cartInitialState = {
+//   cartItems: []
+// };
+// function cartReducer(state = cartInitialState,
+//                  action = {}) {
+//   switch (action.type) {
+//     case 'cart/ADD_TO_CART':
+//       return {
+//         ...state,
+//         cartItems: state.cartItems.concat(
+//           action.payload)
+//       };
+//     case 'cart/CLEAR_CART':
+//       return {
+//         ...state,
+//         cartItems: []
+//       };
+//     default:
+//       return state;
+//   }
+// }
+//
+// const fooKey = 'foo'; /* for selectors and combine */
+// const fooSel = {
+//   count: state => state[fooKey].count
+// };
+// const fooInitialState = {
+//   count: 0
+// };
+// function fooReducer(state = fooInitialState, action = {}) {
+//   switch (action.type) {
+//     case 'foo/INCREMENT':
+//       return {
+//         ...state,
+//         count: state.count + 1
+//       };
+//     default:
+//       return state;
+//   }
+// }
+//
+// const rootReducer = combineReducers({
+//   [cartKey]: cartReducer,
+//   [fooKey]: fooReducer
+// });
+//
+//
+// const state0 = rootReducer();
+// console.log('state0', state0);
+// console.log('cartItems', cartSel.cartItems(state0));
+// console.log('fooCount', fooSel.count(state0));
 
 
-function App({ cartItems }) {
-  return (
-    <div>
-    <h1>Cart</h1>
-    <ul>
-    { cartItems.map(item => (
-      <li key={item.id}>{ item.name }</li> )) }
-    </ul>
-    </div>
-  );
-}
 
-store.dispatch({ type: 'ADD_TO_CART',
-                 payload: { id: 101, name: 'Foo' }
-});
 
-setTimeout(() => {
-  store.dispatch({ type: 'ADD_TO_CART',
-                   payload: { id: 201, name: 'Bar' }
-  });
-}, 2000);
+/* p2 combineReducers and selectors */
+
+
+// import { connect, Provider } from 'react-redux';
+//
+// const enhancer = (window.devToolsExtension) ?
+//                  window.devToolsExtension() :
+//                  f => f;
+// const store = createStore(rootReducer, undefined, enhancer);
+//
+// const cartActions = {
+//   clearCart(ev) {
+//     return { type: 'cart/CLEAR_CART' };
+//   }
+// };
+//
+// function Cart({ cartItems, clearCart }) {
+//   return (
+//     <div>
+//     <h2>Cart</h2>
+//     <ul>
+//     { cartItems.map(item => (
+//       <li key={item.id}>{ item.name }</li> )) }
+//     </ul>
+//     <button onClick={ clearCart }>Clear cart</button>
+//     </div>
+//   );
+// }
+//
+// const CCart = connect(
+//   state => ({ /* mapStateToProps */
+//     cartItems: cartSel.cartItems(state)
+//   }),
+//   { /* mapDispatchToProps */
+//     clearCart: cartActions.clearCart
+//   }
+// )(Cart);
+//
+//
+// function Foo({ count }) {
+//   return (
+//     <div>
+//     <h2>Foo</h2>
+//     <div>Count: { count }</div>
+//     </div>
+//   );
+// }
+//
+// const CFoo = connect(
+//   state => ({ /* mapStateToProps */
+//     count: fooSel.count(state)
+//   })
+// )(Foo);
+//
+//
+// function App() {
+//   return (
+//     <Provider store={store} >
+//     <div>
+//       <CCart />
+//       <CFoo />
+//     </div>
+//     </Provider>
+//   );
+// }
+//
+// ReactDOM.render(<App />,
+//                 appContainerDiv);
+//
+// store.dispatch({ type: 'cart/ADD_TO_CART',
+//                  payload: { id: 101, name: 'Foo' }
+// });
+//
+// setTimeout(() => {
+//   store.dispatch({ type: 'cart/ADD_TO_CART',
+//                    payload: { id: 201, name: 'Bar' }
+//   });
+// }, 2000);
+
+
+
+
+/* async fetch w/action creators */
+
+// import './examples/async-fetch-ac';
+
+
+
+/* async fetch w/thunk */
+
+import './examples/async-fetch-thunk';
