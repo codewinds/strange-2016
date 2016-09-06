@@ -63,14 +63,14 @@ render();
 //   ReactDOM.render(<div>The time is: { now.toLocaleString() }</div>,
 //                   appContainerDiv);
 // }
-
+//
 // setInterval(render, 1000);
 
 
 /* composition */
 
 // ReactDOM.render(<App />, appContainerDiv);
-
+//
 // function App() {
 //   return (
 //     <div>
@@ -79,13 +79,13 @@ render();
 //     </div>
 //   );
 // }
-
+//
 // function Heading() {
 //   return (
 //     <h1>My heading</h1>
 //   );
 // }
-
+//
 // function Foo() {
 //   return (
 //     <div>Foo</div>
@@ -95,15 +95,15 @@ render();
 
 /* fetching data with Axios, iterating with map */
 // import axios from 'axios';
-
+//
 // axios.get('/fake-api.json')
 //   .then(resp => resp.data.items)
 //   .then(items => render(items));
-
+//
 // function render(items) {
 //   ReactDOM.render(<App widgets={items} />, appContainerDiv);
 // }
-
+//
 // function App({ widgets }) {
 //   return (
 //     <div>
@@ -120,7 +120,7 @@ render();
 /* conditional logic using && */
 
 // ReactDOM.render(<App navShown={true} />, appContainerDiv);
-
+//
 // function App({ navShown }) {
 //   return (
 //     <div>
@@ -129,7 +129,7 @@ render();
 //     </div>
 //   );
 // }
-
+//
 // function Nav() {
 //   return (
 //     <section>Nav here</section>
@@ -140,7 +140,7 @@ render();
 /* conditional logic using functions */
 
 // ReactDOM.render(<App navShown={true} />, appContainerDiv);
-
+//
 // function App({ navShown }) {
 //   return (
 //     <div>
@@ -148,13 +148,13 @@ render();
 //       <div>main content</div>
 //     </div>
 //   );
-
+//
 //   function navDisplay() {
 //     if (!navShown) { return null; }
 //     return <Nav />;
 //   }
 // }
-
+//
 // function Nav() {
 //   return (
 //     <section>Nav here</section>
@@ -168,9 +168,9 @@ render();
 // function buyClicked(ev) {
 //   console.log('buyClicked', ev.target);
 // }
-
+//
 // ReactDOM.render(<App buyClicked={buyClicked} />, appContainerDiv);
-
+//
 // function App({ buyClicked }) {
 //   return (
 //       <button onClick={buyClicked}>Buy</button>
@@ -183,7 +183,7 @@ render();
 
 // ReactDOM.render(<App formChange={formChange}
 //                      formSubmit={formSubmit} />, appContainerDiv);
-
+//
 // function App({ formChange, formSubmit }) {
 //   return (
 //       <form onSubmit={formSubmit} >
@@ -195,11 +195,11 @@ render();
 //       </form>
 //   );
 // }
-
+//
 // function formChange(ev) {
 //   console.log('formChange', ev.target.name, ev.target.value);
 // }
-
+//
 // function formSubmit(ev) {
 //   ev.preventDefault(); // prevent the normal form submit
 //   console.log('formSubmit');
@@ -217,8 +217,8 @@ render();
 // App.propTypes = {
 //   greeting: React.PropTypes.string.isRequired
 // };
-
+//
 // ReactDOM.render(<App />, appContainerDiv);
-
+//
 // const greeting = 'Hello';
 // ReactDOM.render(<App greeting={greeting} />, appContainerDiv);
