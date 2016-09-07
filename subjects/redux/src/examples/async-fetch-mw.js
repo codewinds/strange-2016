@@ -3,27 +3,31 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, compose, applyMiddleware } from 'redux';
 import { connect, Provider } from 'react-redux';
-import thunk from 'redux-thunk';
 
 const appContainerDiv = document.querySelector('#appContainer');
 
 const actions = {
   itemFetch(ev) {
-    // return a thunk function
-    return (dispatch, getState) => {
-      dispatch({ type: 'ITEM_FETCH' });
-      return axios.get('/fake-api.json')
-           .then(resp => resp.data.items) /* items property of payload */
-           .then(items => dispatch({
-             type: 'ITEM_FETCH_SUCCESS',
-             payload: items
-           }))
-           .catch(err => dispatch({
-             type: 'ITEM_FETCH_FAILED',
-             payload: err,
-             error: true
-           }));
-    };
+    return { type: 'ITEM_FETCH' };
+  }
+};
+
+const fetchItemsMW = store => next => action => {
+  const { dispatch, getState } = store;
+  if (action && action.type === 'ITEM_FETCH') {
+    return axios.get('/fake-api.json')
+                .then(resp => resp.data.items) /* items property of payload */
+                .then(items => dispatch({
+                  type: 'ITEM_FETCH_SUCCESS',
+                  payload: items
+                }))
+                .catch(err => dispatch({
+                  type: 'ITEM_FETCH_FAILED',
+                  payload: err,
+                  error: true
+                }));
+  } else { // not an action we care about
+    return next(action);
   }
 };
 
@@ -56,7 +60,7 @@ function rootReducer(state = initialState, action = {}) {
 }
 
 const enhancer = compose(
-  applyMiddleware(thunk),
+  applyMiddleware(fetchItemsMW),
   (window.devToolsExtension) ?
     window.devToolsExtension() :
     f => f
@@ -66,7 +70,7 @@ const store = createStore(rootReducer, undefined, enhancer);
 function Catalog({ items, status, fetchItem }) {
   return (
     <div>
-    <h2>Catalog (thunk)</h2>
+    <h2>Catalog (mw)</h2>
     <div>Status: {status}</div>
     <button onClick={fetchItem}>Fetch</button>
     <ul>

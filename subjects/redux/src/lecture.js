@@ -377,4 +377,21 @@ const appContainerDiv = document.querySelector('#appContainer');
 
 /* async fetch w/thunk */
 
-import './examples/async-fetch-thunk';
+// import './examples/async-fetch-thunk';
+
+
+
+/* async fetch custom middleware */
+
+// import './examples/async-fetch-mw';
+
+
+
+/* async fetch redux-logic */
+
+// import './examples/async-fetch-logic';
+
+
+/* async fetch redux-logic using processOptions */
+
+// import './examples/async-fetch-logic-options';
