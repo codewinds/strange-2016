@@ -6,6 +6,8 @@ import { createStore } from 'redux';
 // locate a div in our html where we want to render
 const appContainerDiv = document.querySelector('#appContainer');
 
+ReactDOM.render(<h1>Redux</h1>, appContainerDiv);
+
 /* array reduce */
 
 // const arr = ['a', 'b', 'c'];
@@ -394,4 +396,4 @@ const appContainerDiv = document.querySelector('#appContainer');
 
 /* async search redux-logic using processOptions */
 
-import './examples/async-search-logic-options';
+// import './examples/async-search-logic-options';
