@@ -387,11 +387,11 @@ const appContainerDiv = document.querySelector('#appContainer');
 
 
 
-/* async fetch redux-logic */
+/* async search redux-logic */
 
-// import './examples/async-fetch-logic';
+// import './examples/async-search-logic';
 
 
-/* async fetch redux-logic using processOptions */
+/* async search redux-logic using processOptions */
 
-// import './examples/async-fetch-logic-options';
+import './examples/async-search-logic-options';
