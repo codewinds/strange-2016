@@ -142,6 +142,30 @@ ReactDOM.render(<h1>RxJS</h1>, appContainerDiv);
 // });
 
 
+/* mergeMap */
+
+// const ob$ = Observable.create(obs => {
+//   obs.next('redux');
+//   obs.next('rxjs');
+//   obs.complete();
+// });
+//
+// ob$
+//   .mergeMap(x =>
+//     Observable.ajax({
+//       url: `https://npmsearch.com/query?q=${x}&fields=name,description`,
+//       crossDomain: true,
+//       responseType: 'json'
+//     })
+//     .map(ret => ret.response.results)) // use results prop of payload
+//   .subscribe({
+//     next: x => console.log('next', JSON.stringify(x, null, 2)),
+//     error: err => console.log('error', err),
+//     complete: () => console.log('complete')
+//   });
+
+
+
 /* Subject */
 
 // const sub$ = new Subject();
@@ -156,7 +180,6 @@ ReactDOM.render(<h1>RxJS</h1>, appContainerDiv);
 // sub$.next(20);
 // sub$.next(30);
 // sub$.complete();
-
 
 
 
