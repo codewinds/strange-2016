@@ -12,7 +12,8 @@ const subjectsDir = Path.resolve(__dirname, '..', 'subjects');
 const subjects = {
   reactjs: 'React.js',
   redux: 'Redux',
-  immutable: 'Immutable'
+  immutable: 'Immutable',
+  rxjs: 'RxJS'
 };
 
 function createSubjectHtml(subject, item) {

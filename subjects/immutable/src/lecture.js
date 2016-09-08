@@ -300,7 +300,7 @@ ReactDOM.render(<h1>Immutable</h1>, appContainerDiv);
 //                   payload: 'fantastic' });
 
 
-/* To combineReducers into a single ImmutableJS
+/* Optional to combineReducers into a single ImmutableJS
   use combineReducers from 'redux-immutablejs'
    https://github.com/indexiatech/redux-immutablejs */
 
