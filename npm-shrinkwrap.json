@@ -8447,6 +8447,11 @@
         }
       }
     },
+    "redux-observable": {
+      "version": "0.9.1",
+      "from": "redux-observable@latest",
+      "resolved": "./node_shrinkwrap/redux-observable-0.9.1.tar"
+    },
     "redux-thunk": {
       "version": "2.1.0",
       "from": "redux-thunk@latest",
@@ -9490,15 +9495,15 @@
                       "from": "node-pre-gyp@>=0.6.29 <0.7.0",
                       "resolved": "./node_shrinkwrap/node-pre-gyp-0.6.29.tar"
                     },
-                    "abbrev": {
-                      "version": "1.0.9",
-                      "from": "node_shrinkwrap/abbrev-1.0.9.tar",
-                      "resolved": "./node_shrinkwrap/abbrev-1.0.9.tar"
-                    },
                     "ansi-regex": {
                       "version": "2.0.0",
                       "from": "node_shrinkwrap/ansi-regex-2.0.0.tar",
                       "resolved": "./node_shrinkwrap/ansi-regex-2.0.0.tar"
+                    },
+                    "abbrev": {
+                      "version": "1.0.9",
+                      "from": "node_shrinkwrap/abbrev-1.0.9.tar",
+                      "resolved": "./node_shrinkwrap/abbrev-1.0.9.tar"
                     },
                     "ansi-styles": {
                       "version": "2.2.1",
@@ -9810,6 +9815,11 @@
                       "from": "node_shrinkwrap/jsonpointer-2.0.0.tar",
                       "resolved": "./node_shrinkwrap/jsonpointer-2.0.0.tar"
                     },
+                    "jsprim": {
+                      "version": "1.3.0",
+                      "from": "node_shrinkwrap/jsprim-1.3.0.tar",
+                      "resolved": "./node_shrinkwrap/jsprim-1.3.0.tar"
+                    },
                     "mime-db": {
                       "version": "1.23.0",
                       "from": "node_shrinkwrap/mime-db-1.23.0.tar",
@@ -9819,11 +9829,6 @@
                       "version": "2.1.11",
                       "from": "node_shrinkwrap/mime-types-2.1.11.tar",
                       "resolved": "./node_shrinkwrap/mime-types-2.1.11.tar"
-                    },
-                    "jsprim": {
-                      "version": "1.3.0",
-                      "from": "node_shrinkwrap/jsprim-1.3.0.tar",
-                      "resolved": "./node_shrinkwrap/jsprim-1.3.0.tar"
                     },
                     "minimatch": {
                       "version": "3.0.2",
@@ -9985,15 +9990,15 @@
                       "from": "node_shrinkwrap/tough-cookie-2.2.2.tar",
                       "resolved": "./node_shrinkwrap/tough-cookie-2.2.2.tar"
                     },
-                    "tweetnacl": {
-                      "version": "0.13.3",
-                      "from": "node_shrinkwrap/tweetnacl-0.13.3.tar",
-                      "resolved": "./node_shrinkwrap/tweetnacl-0.13.3.tar"
-                    },
                     "tunnel-agent": {
                       "version": "0.4.3",
                       "from": "node_shrinkwrap/tunnel-agent-0.4.3.tar",
                       "resolved": "./node_shrinkwrap/tunnel-agent-0.4.3.tar"
+                    },
+                    "tweetnacl": {
+                      "version": "0.13.3",
+                      "from": "node_shrinkwrap/tweetnacl-0.13.3.tar",
+                      "resolved": "./node_shrinkwrap/tweetnacl-0.13.3.tar"
                     },
                     "uid-number": {
                       "version": "0.0.6",
