@@ -34,7 +34,6 @@ const rootEpic = combineEpics(
 
 const epicMiddleware = createEpicMiddleware(rootEpic);
 const enhancer = applyMiddleware(epicMiddleware);
-const store = createStore(reducer, undefined, enhancer);
 
 const actions = {
   fetchFoo(ev) {
@@ -48,20 +47,29 @@ const initialState = {
 };
 function reducer(state = initialState, action = {}) {
   switch (action.type) {
+    case 'FETCH_FOO':
+      return {
+        ...state,
+        status: 'fetching...'
+      };
     case 'FETCH_FOO_SUCCESS':
       return {
         ...state,
-        items: action.payload
+        items: action.payload,
+        status: ''
       };
     case 'FETCH_FOO_FAILED':
       return {
         ...state,
-        status: action.payload
+        status: action.payload.toString()
       };
     default:
       return state;
   }
 }
+
+const store = createStore(reducer, undefined, enhancer);
+
 
 function App({ items, status, fetchItems }) {
   return (

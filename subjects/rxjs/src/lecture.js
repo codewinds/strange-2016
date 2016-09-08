@@ -162,4 +162,14 @@ ReactDOM.render(<h1>RxJS</h1>, appContainerDiv);
 
 /* redux-observable http://redux-observable.js.org/ */
 
-import './examples/redux-observable';
+// import './examples/redux-observable';
+
+
+/* redux-logic ajax search https://github.com/jeffbski/redux-logic */
+
+// import './examples/redux-logic-ajax-search';
+
+
+/* redux-logic ajax search w/processOptions */
+
+// import './examples/redux-logic-ajax-search-process-options';
