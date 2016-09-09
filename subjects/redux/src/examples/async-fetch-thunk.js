@@ -89,10 +89,13 @@ const CCatalog = connect(
 
 function App() {
   return (
-    <Provider store={store} >
+    <div>
       <CCatalog />
-    </Provider>
+    </div>
   );
 }
 
-ReactDOM.render(<App />, appContainerDiv);
+ReactDOM.render(<Provider store={store} >
+                  <App />
+                </Provider>,
+                appContainerDiv);

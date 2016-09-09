@@ -89,7 +89,7 @@ function App({ results, fetchStatus, npmSearch }) {
 
 ReactDOM.render(
   <Provider store={ store }>
-  <ConnectedApp />
+    <ConnectedApp />
   </Provider>,
   document.getElementById('appContainer')
 );

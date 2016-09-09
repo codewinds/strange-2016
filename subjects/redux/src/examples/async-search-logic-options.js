@@ -80,7 +80,7 @@ function App({ results, fetchStatus, npmSearch }) {
 
 ReactDOM.render(
   <Provider store={ store }>
-  <CApp />
+    <CApp />
   </Provider>,
   appContainerDiv
 );

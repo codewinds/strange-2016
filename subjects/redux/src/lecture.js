@@ -205,14 +205,18 @@ ReactDOM.render(<h1>Redux</h1>, appContainerDiv);
 //
 // function App() {
 //   return (
-//     <Provider store={store} >
-//     <CCart />
-//     </Provider>
+//     <div>
+//       <CCart />
+//     </div>
 //   );
 // }
 //
-// ReactDOM.render(<App />,
-//                 appContainerDiv);
+// ReactDOM.render(
+//   <Provider store={store} >
+//   <App />
+//   </Provider>,
+//   appContainerDiv
+// );
 //
 //
 // store.dispatch({ type: 'ADD_TO_CART',
@@ -238,7 +242,7 @@ ReactDOM.render(<h1>Redux</h1>, appContainerDiv);
 //   cartItems: []
 // };
 // function cartReducer(state = cartInitialState,
-//                  action = {}) {
+//                      action = {}) {
 //   switch (action.type) {
 //     case 'cart/ADD_TO_CART':
 //       return {
@@ -346,17 +350,19 @@ ReactDOM.render(<h1>Redux</h1>, appContainerDiv);
 //
 // function App() {
 //   return (
-//     <Provider store={store} >
 //     <div>
 //       <CCart />
 //       <CFoo />
 //     </div>
-//     </Provider>
 //   );
 // }
 //
-// ReactDOM.render(<App />,
-//                 appContainerDiv);
+// ReactDOM.render(
+//   <Provider store={store} >
+//   <App />
+//   </Provider>,
+//   appContainerDiv
+// );
 //
 // store.dispatch({ type: 'cart/ADD_TO_CART',
 //                  payload: { id: 101, name: 'Foo' }
