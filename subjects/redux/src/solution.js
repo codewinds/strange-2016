@@ -14,7 +14,7 @@ Only uncomment one of the following.
  */
 
 // uncomment this to use solution 1 (steps 1-11)
-import './solutions/solution1/index';
+// import './solutions/solution1/index';
 
 // OR uncomment this to use solution 2 (all steps completed)
-// import './solutions/solution2/index';
+import './solutions/solution2/index';
