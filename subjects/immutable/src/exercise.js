@@ -3,16 +3,38 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 /*
-  Example which fetches a list of items from a REST api
-  and renders it to the screen. Also logs and renders
-  renders the error message if one occurs.
- */
+   Immutable Exercise
 
+   1.
+ */
 
 const appContainerDiv = document.querySelector('#appContainer');
 
+const struct = {
+  profile: {
+    firstName: 'Jordan',
+    lastName: 'Bell',
+    emails: [
+      'jordan@bell.com',
+      'jbell@gmail.com'
+    ]
+  },
+  favorites: [
+    'http://news.com/item/foo',
+    'http://codewinds.com/'
+  ]
+};
+
+
+
+
+
+
+
+
+
 function render() {
-  ReactDOM.render(<div>Exercises here</div>, appContainerDiv);
+  ReactDOM.render(<div>Immutable Exercise</div>, appContainerDiv);
 }
 
 render();

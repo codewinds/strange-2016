@@ -12,7 +12,7 @@ import ReactDOM from 'react-dom';
 const appContainerDiv = document.querySelector('#appContainer');
 
 function render() {
-  ReactDOM.render(<div>Solution here</div>, appContainerDiv);
+  ReactDOM.render(<div>Immutable Solution</div>, appContainerDiv);
 }
 
 render();
