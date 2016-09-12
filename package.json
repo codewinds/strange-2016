@@ -99,7 +99,7 @@
     "redux-logic": "^0.9.1",
     "redux-observable": "^0.9.1",
     "redux-thunk": "^2.1.0",
-    "rxjs": "^5.0.0-beta.11",
+    "rxjs": "^5.0.0-beta.12",
     "shortid": "^2.2.6",
     "timm": "^1.0.0",
     "updeep": "^0.16.1"
