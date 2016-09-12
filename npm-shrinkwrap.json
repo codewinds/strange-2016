@@ -1,6 +1,6 @@
 {
   "name": "strange-2016",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "dependencies": {
     "autoprefixer": {
       "version": "6.4.0",
