@@ -133,7 +133,7 @@ ReactDOM.render(<h1>RxJS</h1>, appContainerDiv);
 /* Observable.ajax */
 
 // const ob$ = Observable.ajax.getJSON('/fake-api.json')
-//   .map(payload => payload.items); // use items property
+//                       .map(payload => payload.items); /* use items prop */
 //
 // ob$.subscribe({
 //   next: x => console.log('next', JSON.stringify(x, null, 2)),
@@ -153,11 +153,11 @@ ReactDOM.render(<h1>RxJS</h1>, appContainerDiv);
 // ob$
 //   .mergeMap(x =>
 //     Observable.ajax({
-//       url: `https://npmsearch.com/query?q=${x}&fields=name,description`,
+//       url: `https:npmsearch.com/query?q=${x}&fields=name,description`,
 //       crossDomain: true,
 //       responseType: 'json'
 //     })
-//     .map(ret => ret.response.results)) // use results prop of payload
+//               .map(ret => ret.response.results))  /* use results prop of payload */
 //   .subscribe({
 //     next: x => console.log('next', JSON.stringify(x, null, 2)),
 //     error: err => console.log('error', err),
