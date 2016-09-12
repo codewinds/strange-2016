@@ -123,7 +123,7 @@ ReactDOM.render(<h1>Immutable</h1>, appContainerDiv);
 // console.log('state1', JSON.stringify(state1, null, 2));
 
 
-/* ImmutableJS updateIn mixed maps+lists */
+/* ImmutableJS updateIn, mergeIn mixed maps+lists */
 
 // const state0 = Imm.fromJS({
 //   a: 1,
@@ -146,11 +146,19 @@ ReactDOM.render(<h1>Immutable</h1>, appContainerDiv);
 // const state3 = state0
 //   .updateIn(['b', 'bb'], x => x.push(40));
 //
+// const state4 = state0
+//   .mergeIn(['c', 'cc'],
+//            Imm.Map({
+//              cc1: 'foo',
+//              cc2: 'bar'
+//            }));
+//
 // console.log('state0', JSON.stringify(state0, null, 2));
 // console.log('state1', JSON.stringify(state1, null, 2));
 // console.log('state2', JSON.stringify(state2, null, 2));
 // console.log('state2 b.bb[0]', state2.getIn(['b', 'bb', 0]));
 // console.log('state3', JSON.stringify(state3, null, 2));
+// console.log('state4', JSON.stringify(state4, null, 2));
 
 
 /* ImmutableJS Records */
