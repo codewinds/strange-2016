@@ -72,18 +72,17 @@ const ConnectedApp = connect(
 function App({ results, fetchStatus, npmSearch }) {
   return (
     <div>
-    <div>Search npmsearch.com for packages</div>
-    <div>Status: { fetchStatus }</div>
-    <input autoFocus="true"
-    onChange={ npmSearch }
-    placeholder="package keywords" />
-    <ul>
-    {
-      results.map(result => (
-        <li key={ result.name[0] }>{ result.name[0] } - { result.description[0] }</li>
-      ))
-    }
-    </ul>
+      <div>Search npmsearch.com for packages</div>
+      <div>Status: { fetchStatus }</div>
+      <input autoFocus="true"
+             onChange={ npmSearch }
+             placeholder="package keywords" />
+      <ul>
+      { results.map(result => (
+        <li key={ result.name[0] }>
+          { result.name[0] } - { result.description[0] }
+        </li> )) }
+      </ul>
     </div>
   );
 }

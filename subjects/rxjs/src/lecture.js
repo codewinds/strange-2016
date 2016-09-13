@@ -88,11 +88,34 @@ ReactDOM.render(<h1>RxJS</h1>, appContainerDiv);
 //   complete: () => console.log('complete')
 // });
 
+/* timestamp */
+
+// const int$ = Observable.interval(1000)
+//   .timestamp();
+//
+// int$.subscribe({
+//   next: x => console.log('next', x),
+//   error: err => console.log('error', err),
+//   complete: () => console.log('complete')
+// });
+
 
 /* take(N) */
 
 // const int$ = Observable.interval(1000)
 //   .take(5);
+//
+// int$.subscribe({
+//   next: x => console.log('next', x),
+//   error: err => console.log('error', err),
+//   complete: () => console.log('complete')
+// });
+
+/* debounceTime */
+
+// const int$ = Observable.interval(100)
+//                        .take(5)
+//                        .debounceTime(200);
 //
 // int$.subscribe({
 //   next: x => console.log('next', x),
@@ -109,6 +132,45 @@ ReactDOM.render(<h1>RxJS</h1>, appContainerDiv);
 //                        .map(x => `${x} banana`);
 //
 // int$.subscribe({
+//   next: x => console.log('next', x),
+//   error: err => console.log('error', err),
+//   complete: () => console.log('complete')
+// });
+
+
+/* Observable.merge, throttleTime */
+
+// const ob$ = Observable.merge(
+//   Observable.interval(1000)
+//             .map(x => `${x}s*****`),
+//   Observable.interval(100)
+// )
+//    .throttleTime(500);
+//
+// ob$.subscribe({
+//   next: x => console.log('next', x),
+//   error: err => console.log('error', err),
+//   complete: () => console.log('complete')
+// });
+
+
+/* Observable.combineLatest */
+
+// const a$ = Observable.interval(1000)
+//                      .map(x => `${x}s`);
+//
+// const b$ = Observable.interval(200);
+//
+// const ob$ = Observable.combineLatest(
+//   a$,
+//   b$,
+//   (a, b) => ({
+//     a: a,
+//     b: b
+//   })
+// );
+//
+// ob$.subscribe({
 //   next: x => console.log('next', x),
 //   error: err => console.log('error', err),
 //   complete: () => console.log('complete')

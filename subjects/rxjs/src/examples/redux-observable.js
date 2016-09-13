@@ -74,13 +74,13 @@ const store = createStore(reducer, undefined, enhancer);
 function App({ items, status, fetchItems }) {
   return (
     <div>
-    <h2>redux-observable</h2>
-    <button onClick={fetchItems}>Fetch</button>
-    <div>Status: { status }</div>
-    <ul>
-    { items.map(item =>
-      <li key={item.id}>{ item.name }</li> ) }
-    </ul>
+      <h2>redux-observable</h2>
+      <button onClick={fetchItems}>Fetch</button>
+      <div>Status: { status }</div>
+      <ul>
+        { items.map(item =>
+          <li key={item.id}>{ item.name }</li> ) }
+      </ul>
     </div>
   );
 }
