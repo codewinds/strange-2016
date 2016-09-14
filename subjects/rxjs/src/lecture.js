@@ -10,7 +10,25 @@ const { Observable, Subject } = Rx;
 // locate a div in our html where we want to render
 const appContainerDiv = document.querySelector('#appContainer');
 
-ReactDOM.render(<h1>RxJS</h1>, appContainerDiv);
+ReactDOM.render(
+  <div>
+    <h1>RxJS</h1>
+    <ul>
+      <li>Event Composition</li>
+      <li>Data over time</li>
+      <li>ReactiveX/RxJS v5</li>
+        <ul>
+          <li>Better performance</li>
+          <li>Modularity</li>
+          <li>Debuggable call stacks</li>
+          <li>Reduced API size</li>
+       </ul>
+    </ul>
+  </div>,
+  appContainerDiv
+);
+
+// ReactDOM.render(<h1>RxJS</h1>, appContainerDiv);
 
 /* Observable.create */
 

@@ -10,7 +10,15 @@ function App({ prefix }) {
   return (
       <div>
         <h1>{ prefix } Strange Loop!!!</h1>
-        <div>using stateless function component</div>
+        <div>using React.js stateless function component</div>
+        <h2>React.js is V=f(x)</h2>
+        <ul>
+          <li>Compatible with functional code + immutable values</li>
+          <li>Simple to learn</li>
+          <li>Composable Components</li>
+          <li>Easy to migrate existing projects</li>
+          <li>Path to native and desktops</li>
+        </ul>
       </div>
   );
 }

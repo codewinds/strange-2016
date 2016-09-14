@@ -6,7 +6,21 @@ import { createStore } from 'redux';
 // locate a div in our html where we want to render
 const appContainerDiv = document.querySelector('#appContainer');
 
-ReactDOM.render(<h1>Redux</h1>, appContainerDiv);
+ReactDOM.render(
+  <div>
+    <h1>Redux</h1>
+    <div>State management and coordination</div>
+    <ul>
+      <li>Manages state in an immutable fashion</li>
+      <li>Connects state with container components</li>
+      <li>Encourages good archictecture</li>
+      <li>Dev tools and middleware to extend</li>
+    </ul>
+  </div>,
+  appContainerDiv
+);
+
+// ReactDOM.render(<h1>Redux</h1>, appContainerDiv);
 
 /* array reduce */
 

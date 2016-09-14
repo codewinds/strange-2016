@@ -7,7 +7,25 @@ import Imm from 'immutable';
 // locate a div in our html where we want to render
 const appContainerDiv = document.querySelector('#appContainer');
 
-ReactDOM.render(<h1>Immutable</h1>, appContainerDiv);
+
+ReactDOM.render(
+  <div>
+    <h1>Immutable</h1>
+    <ul>
+      <li>Easier to reason about</li>
+      <li>Referential equality</li>
+      <li>Thread-safe</li>
+        <ul>
+          <li>JS may eventually get shared memory for workers</li>
+          <li>SharedArrayBuffer is first experiment</li>
+        </ul>
+    </ul>
+  </div>,
+  appContainerDiv
+);
+
+
+// ReactDOM.render(<h1>Immutable</h1>, appContainerDiv);
 
 /* Object spread */
 
@@ -24,6 +42,25 @@ ReactDOM.render(<h1>Immutable</h1>, appContainerDiv);
 //
 // console.log('state0', state0);
 // console.log('state1', state1);
+
+
+/*
+ReactDOM.render(
+  <div>
+    <h1>Immutable.js</h1>
+    <ul>
+      <li>Persistent Data Structures</li>
+        <ul>
+          <li>Structural sharing</li>
+          <li>Audit history</li>
+          <li>Undo/redo</li>
+        </ul>
+      <li>JS familiar API</li>
+    </ul>
+  </div>,
+  appContainerDiv
+);
+*/
 
 
 /* ImmutableJS maps */
@@ -312,6 +349,21 @@ ReactDOM.render(<h1>Immutable</h1>, appContainerDiv);
   use combineReducers from 'redux-immutablejs'
    https://github.com/indexiatech/redux-immutablejs */
 
+/*
+ReactDOM.render(
+  <div>
+    <h1>Timm</h1>
+    <ul>
+      <li>Immutability Helper</li>
+      <li>Use plain JS objects</li>
+      <li>Lightweight</li>
+      <li>Outperforms Immutable.js until large arrays or objects</li>
+    </ul>
+  </div>,
+  appContainerDiv
+);
+*/
+
 
 /* Timm Immutable Helper
    http://guigrpa.github.io/timm/  */
@@ -345,7 +397,20 @@ ReactDOM.render(<h1>Immutable</h1>, appContainerDiv);
 // console.log('state2', JSON.stringify(state2, null, 2));
 // console.log('state3', JSON.stringify(state3, null, 2));
 
-
+/*
+ReactDOM.render(
+  <div>
+    <h1>Updeep</h1>
+    <ul>
+      <li>Immutability Helper</li>
+      <li>Uses plain JS objects</li>
+      <li>Freezes objects in development</li>
+      <li>More comprehensive API</li>
+    </ul>
+  </div>,
+  appContainerDiv
+);
+*/
 
 /*
   Updeep Immutable Helper
