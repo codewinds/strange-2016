@@ -4,6 +4,8 @@
 
 The workshop uses an auto-build development environment to transpile ES6/7 code to ES5 with Babel and bundle with Webpack. Node.js is used to run the environment.
 
+## Version 1.0.0 - updated 2016-09-14 1PM CDT
+
 **Note: Please install this repo prior to the workshop** so we can ensure that things install and build properly. As we approach the workshop, you'll be able to do a `git pull origin` to efficiently get the updated workshop code wihout having to redownload these dependencies. If you have any problems, see the end of this readme for contacting me.
 
 [Follow me on twitter: @jeffbski](https://twitter.com/jeffbski) to get notified about updates for the workshop
