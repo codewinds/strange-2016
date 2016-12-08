@@ -445,3 +445,44 @@ ReactDOM.render(
 // console.log('state1', JSON.stringify(state1, null, 2));
 // console.log('state2', JSON.stringify(state2, null, 2));
 // console.log('state3', JSON.stringify(state3, null, 2));
+
+
+/*
+   lodash-fp as immutable helper
+ */
+
+import fp from 'lodash/fp';
+
+const state0 = {
+  a: 1,
+  b: {
+    bb: [10, 20, 30]
+  },
+  c: {
+    cc: {
+      ccc: 'hello'
+    }
+  }
+};
+
+const state1 = fp.merge(state0, { a: 10 });
+const state2 = fp.update(['b', 'bb'],
+                           list => list.concat(40),
+                           state1);
+const state3 = fp.merge(state0, {
+  d: 'dog',
+  e: 'egg'
+});
+
+const state4 = fp.set('b.bz[2]', { hello: 'world' }, state0);
+const state5 = fp.set('[1]', 42, []);
+
+console.log('state0', JSON.stringify(state0, null, 2));
+console.log('state1', JSON.stringify(state1, null, 2));
+console.log('state2', JSON.stringify(state2, null, 2));
+console.log('state3', JSON.stringify(state3, null, 2));
+console.log('state4', JSON.stringify(state4, null, 2));
+console.log('state5', JSON.stringify(state5, null, 2));
+console.log('state0-bb1', fp.at('b.bb[1]', state0));
+console.log('second-in-arr', fp.at('[1]', [10, 20, 30]));
+console.log('fourth-in-arr', fp.at('[4]', [10, 20, 30]));

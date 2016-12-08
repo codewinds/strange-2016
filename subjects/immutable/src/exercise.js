@@ -7,6 +7,7 @@ import deepFreeze from 'deep-freeze';
 import Imm from 'immutable';
 import { merge, mergeIn, set, setIn, update, updateIn } from 'timm';
 import Up from 'updeep';
+import fp from 'lodash/fp';
 
 /*
    Immutable Exercise
@@ -90,9 +91,26 @@ import Up from 'updeep';
    current from your history array.
 
 
+   Using lodash-fp
+
+   6a. Using the original `struct`. Create an updated state using lodash-fp by updating the firstName.
+
+   6b. Append new email using lodash-fp
+
+   6c. Console.log the value of firstName
+
+   6d. Iterate on the emails and console.log with `.forEach`
+
+   6e. Create an array of states called `history` which contains each
+   of the previous states. Console.log the state just prior to the
+   current from your history array.
+
+
+
+
    Convert a reducer in React/Redux app to using ImmutableJS Record/List
 
-   6. Convert profileReducer (and profileInitialState) to use ImmutableJS using Records and Lists.
+   7. Convert profileReducer (and profileInitialState) to use ImmutableJS using Records and Lists.
 
    You should see the proper results of the dispatch updates at the
    bottom of this file resulting in name: Jorden Baz and a total of three
@@ -229,10 +247,31 @@ deepFreeze(struct);
 // console.log('prev state history5', ?); // log prior state
 
 
+/* Using lodash-fp lib */
+
+// TODO 6a - Using the original `struct`. Create an updated state using lodash-fp by updating the firstName.
+
+// const lstruct1 = ?; // update struct firstName into lstruct2
+
+// TODO 6b - create lstruct2 from appending to emails in lstruct1
+// const lstruct2 = ?;  // append email to lstruct1 with lodash-fp
+
+// TODO 6c - console.log value of firstName
+// console.log('lstruct2 firstName', ?);
+
+// TODO 6d - iterate on the emails and console.log each with `.forEach`
+// iterate over lstruct2 emails and console.log each
+
+// TODO 6e - create history array of previous states, log prior state from it
+// const history6 = [?];
+// console.log('prev state history6', ?); // log prior state
+
+
+
 
 /* Convert profileReducer in React/Redux app to ImmutableJS Record/List */
 
-// TODO 6a - convert profileInialState to use Immutable.js Record/List
+// TODO 7a - convert profileInialState to use Immutable.js Record/List
 const profileInitialState = {
   firstName: 'Jordan',
   lastName: 'Bell',
@@ -242,7 +281,7 @@ const profileInitialState = {
   ]
 };
 
-// TODO 6b - convert profileReducer to use Immutable.js
+// TODO 7b - convert profileReducer to use Immutable.js
 function profileReducer(state = profileInitialState, action = {}) {
   switch (action.type) {
     case 'profile/FIELD_UPDATE': // for firstName and lastName updates
