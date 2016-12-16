@@ -102,7 +102,8 @@ var config = {
     // new webpack.IgnorePlugin(/locale/, /moment$/),
 
     new WebpackShellPlugin({
-      dev: false, // run onBuildEnd even during watch changes
+      dev: false, // run onBuildEnd even during watch changes,
+      safe: true, // use exec
       onBuildEnd: [
         'rimraf dist/style.js' // clean up this, not needed
       ],
